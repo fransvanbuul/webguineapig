@@ -16,9 +16,17 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <sonar.projectKey>fransvanbuul_webguineapig</sonar.projectKey>
+        <sonar.organization>fransvanbuul</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>df7e844049ab358dab38c50ec0037d28083449f7</sonar.login>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jersey</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jdbc</artifactId>
