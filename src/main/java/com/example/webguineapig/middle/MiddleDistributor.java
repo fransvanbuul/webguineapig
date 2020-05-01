@@ -13,7 +13,10 @@ public class MiddleDistributor {
     }
 
     public void proceed(String payload) {
-        simpleTransferExamples.directTransfer(payload);
+  //      simpleTransferExamples.directTransfer(payload);
+        // simpleTransferExamples.mapTransfer(payload);
+  //      simpleTransferExamples.noMapTransfer(payload);
+        simpleTransferExamples.lambdaTransfer(payload);
     }
 
 }
