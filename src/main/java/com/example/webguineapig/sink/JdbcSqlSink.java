@@ -1,5 +1,6 @@
 package com.example.webguineapig.sink;
 
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -11,9 +12,11 @@ import java.sql.Statement;
 public class JdbcSqlSink {
 
     private final DataSource dataSource;
+    private final JdbcTemplate jdbcTemplate;
 
-    public JdbcSqlSink(DataSource dataSource) {
+    public JdbcSqlSink(DataSource dataSource, JdbcTemplate jdbcTemplate) {
         this.dataSource = dataSource;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public void simpleSqlI(String payload) {
@@ -25,6 +28,10 @@ public class JdbcSqlSink {
             e.printStackTrace();
             throw new RuntimeException("Something went wrong");
         }
+    }
+
+    public void jdbcTemplateSqlI(String payload) {
+        jdbcTemplate.execute(payload);
     }
 
 }

@@ -13,7 +13,8 @@ public class SinkDistributor {
     }
 
     public void proceed(String payload) {
-        jdbcSqlSink.simpleSqlI(payload);
+//        jdbcSqlSink.simpleSqlI(payload);
+        jdbcSqlSink.jdbcTemplateSqlI(payload);
     }
 
 }

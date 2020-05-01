@@ -32,10 +32,14 @@ public class SimpleTransferExamples {
         sinkDistributor.proceed(myMap.get("TEST2"));
     }
 
+    /* SonarQube false negative. ok for Fortify */
     public void lambdaTransfer(String payload) {
         String mappedValue = getTransferFunction() .apply(payload);
         sinkDistributor.proceed(mappedValue);
     }
+
+
+
 
     private Function<String, String> getTransferFunction() {
         return x -> x + "bla";
